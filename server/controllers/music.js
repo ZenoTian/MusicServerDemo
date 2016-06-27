@@ -1,5 +1,4 @@
-//和音乐相关的
-//控制器只负责调度，分发请求
+
 const express = require('express')
 const path = require('path')
 const router = module.exports = express.Router()
@@ -11,7 +10,6 @@ router.prefix = '/music'
 
 
 router.get('/list', (req, res) => {
-	//res.render('music/list'，{title：'音乐列表'})
 	res.locals.title = '音乐列表'
 	res.locals.list = Music.getList()//数据列表
 	res.render('music/list')
@@ -24,7 +22,7 @@ router.get('/add', (req, res) => {
 
 router.post('/add',(req, res) => {
 	const form = new formidable.IncomingForm()
-	//上传文件处理的插件
+	//上传文件处理插件
 	form.uploadDir = path.join(__dirname,'../www/uploads')
 	form.keepExtensions  = true;
 	//保存文件扩展名
@@ -40,7 +38,6 @@ router.post('/add',(req, res) => {
 		const music = new Music(id + 1, 
 			files.title,
 			files.artist,
-			//不能保存完整路径
 			path.basename(files.music.path),
 			path.basename(files.poster.path))
 		music.save()

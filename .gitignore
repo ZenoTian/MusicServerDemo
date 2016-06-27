@@ -1,0 +1,4 @@
+#忽略node_modules
+node_modules
+server/www/uploads
+.git

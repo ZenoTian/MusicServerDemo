@@ -1,7 +1,6 @@
  ;(function (angular) {
  	//定义ng模块管理应用程序
  	angular.module('musicApp',['ngRoute'])
- 	//第二个参数必须传，否则不是创建模块而是获取已有的模块
  	.config(['$routeProvider',function($routeProvider) {
  		$routeProvider
  		.when('/home',{

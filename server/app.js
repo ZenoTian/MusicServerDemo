@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 
 const app = module.exports = express()
 
-//配置模板引擎 body-parser controller载入
+//配置模板引擎 
 app.set('views',path.join(__dirname,'views'))
 app.set('view engine','xtpl')
 
@@ -28,8 +28,6 @@ controllers.forEach(c => {
 })	
 
 if (!module.parent) {
-	//module.parent 加载当前模块的父模块 相当于index
-	//module.parent 只有当前文件被载入的清苦啊下才有值，否则为Null
   const server = app.listen(process.env.PORT || 2080, error => {
   if (error) throw error
   const address = server.address()

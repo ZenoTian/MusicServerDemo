@@ -19,6 +19,8 @@ html {
 body {
   font-family: 'Open Sans', sans-serif;
   /* font-family: "Microsoft YaHei", "Open Sans", sans-serif; */
+  -webkit-user-select: none;
+  cursor: default;
 }
 
 ::-webkit-scrollbar {
@@ -85,6 +87,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   justify-content: space-between;
   background-color: rgba(10, 10, 10, .3);
   border-bottom: .0625rem solid rgba(10, 10, 10, .8);
+  -webkit-app-region: drag;
 }
 
 .header > button,
@@ -94,6 +97,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   border: 0;
   font-size: 1.25rem;
   padding: 1rem;
+  -webkit-app-region: no-drag;
 }
 
 .header > h1 {

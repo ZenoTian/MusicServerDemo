@@ -8,15 +8,6 @@ router.prefix = '/api'
 
 //api/music
 router.get('/music', (req, res) => {
-	// res.send(Music.getList())
-	// res.send(`${req.query.cb} && ${req.query.cb}(${JSON.stringify(Music.getList())})`)
-	//自己写的需要设置响应的响应类型
-	//Content Type  = text/javascript
-	// res.jsonp(Music.getList())
-	//jsonp方法会自动接收客户端传来的回调的名称
-	//默认接收键为callback 可以自定义接收的回调的函数名
-	//使用app.set('jsonp callback name','cb')
-	//获得数据后的注释（分号），为了防止出现异常
 	const list = Music.getList()
 	res.jsonp(list.map(item => {
 		const temp = {}
